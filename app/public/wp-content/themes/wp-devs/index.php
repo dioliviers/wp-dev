@@ -22,6 +22,9 @@ As imagens que irão ficar randomicas e logo após com essa chamada acima ele pe
                                         ?>
                                             <article>
                                                 <h2><?php the_title(); ?></h2><!-- ele exibe o titulo do post -->
+                                                <?php the_post_thumbnail('medium');?><!-- insere a imagem destacada ( thumbnail) nos posts  (tamanho padrão definido  pelo wp
+                                             se colocarmos o parametro 'thumb' ele fica com 150x150, 'medium'(300x300) e 'large' ou 'full' deixa as imagens definidas em "configurações " padrão do wp
+                                                OU podemos passar dentro do parametro um array(valor x valor ) ele também define no valor desejado-->
                                                 <div class="meta-info">
                                                     <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p><!-- a data e o author obs: sempre um get tem um echo -->
                                                     <p>Categories: <?php the_category( ' ' ); ?></p><!-- a categoria -->
