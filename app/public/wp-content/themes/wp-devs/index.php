@@ -38,6 +38,7 @@ As imagens que irão ficar randomicas e logo após com essa chamada acima ele pe
                                         <p>Nothing yet to be displayed!</p>
                                 <?php endif; ?>
                             </div>
+                            <?php get_sidebar(); ?> <!-- chama o sidebar (widget) -->
                         </div>
                     </section>
                 </main>

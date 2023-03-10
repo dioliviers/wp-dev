@@ -36,18 +36,30 @@ function wpdevs_config(){
 };
 
 add_action('after_setup_theme','wpdevs_config',0); /* o '0' define prioridade maxima */
+add_action( 'widgets_init', 'wpdevs_sidebars' ); /* dou um nome pro hook e chamo a função para ser exibida */
 
-add_action('widgets_init','wpdevs_sidebars');
+function wpdevs_sidebars(){ /* crio uma função */
+    register_sidebar( /*  chamo a função register_sidebar e passo como parametro em array as informações para inserir no sidebar */
+        array( 
+            'name'  => 'Blog Sidebar',  /* nome do widget */
+            'id'    => 'sidebar-blog', /*  classe */
+            'description'   => 'This is the Blog Sidebar. You can add your widgets here.', /* descrição */
+            'before_widget' => '<div class="widget-wrapper">',/* cria uma classe antes */
+            'after_widget'  => '</div>',/* fecha a classe depois */
+            'before_title'  => '<h4 class="widget-title">',/* cria uma classe antes */
+            'after_title'   => '</h4>' /* fecha a classe depois */
+        )
+    );
 
-function wpdevs_sidebars(){
-    register_sidebar(array(
-        'name' => 'Blog sidebar',
-        'id'   => 'sidebar-blog',
-        'description' => 'This is the blog sidebar. You can add your widgets here.',
-        'before_widget' => '<div> class="widget-wrapper"',
-        'after' => '</div>',
-        'before_title' => '<h4> class="widget-title"',
-        'after_title'  => '</h4>',
-
-    ));
+    register_sidebar( /*  chamo a função register_sidebar e passo como parametro em array as informações para inserir no sidebar */
+        array( 
+            'name'  => 'Page Sidebar',  /* nome do widget */
+            'id'    => 'sidebar-page', /*  classe */
+            'description'   => 'This is the Blog Sidebar. You can add your widgets here.', /* descrição */
+            'before_widget' => '<div class="widget-wrapper">',/* cria uma classe antes */
+            'after_widget'  => '</div>',/* fecha a classe depois */
+            'before_title'  => '<h4 class="widget-title">',/* cria uma classe antes */
+            'after_title'   => '</h4>' /* fecha a classe depois */
+        )
+    );
 }

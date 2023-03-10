@@ -22,6 +22,7 @@ As imagens que irão ficar randomicas e logo após com essa chamada acima ele pe
                                 endwhile;
                             ?>                                
                         </div>
+                        <?php get_sidebar('page');?> <!-- passa como parametro o nome da pagina pois tem mais de um widget -->
                     </div>
                 </main>
             </div>
