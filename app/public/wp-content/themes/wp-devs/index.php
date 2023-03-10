@@ -16,7 +16,7 @@ As imagens que irão ficar randomicas e logo após com essa chamada acima ele pe
                     <section class="home-blog">
                         <div class="container">
                             <div class="blog-items">
-                                <?php 
+                                <?php
                                     if( have_posts() ):/* Se existir post */
                                         while( have_posts() ) : the_post(); /* enquanto houver post no post  */
                                         ?>

@@ -23,6 +23,14 @@ function wpdevs_config(){
     add_theme_support('custom-header',$args);/* aqui ele vai adicionar no dashboard em aparencias a opção Header ou seja ele vai habilitar 
     o suporte a imagens no cabeçalho no header*/
     add_theme_support('post-thumbnails');/* adiciona a opção de inserir thumbnails nos posts ( aparece opção pra inserir Imagens destacada em miniaturas) */
+    add_theme_support('custom-logo', array ( /* aqui chamamos o suporte ao tema para o logo do site */
+        'width' => 200, /* definimos um tamanho para imagem */
+        'height' => 110, /* definimos uma altura */
+        'flex-height' => true, /* deixa flexivel */
+        'flex-width' => true /* deixa flexivel */
+        
+        /* quando definimos a imagem no painel ela aparecerá nas dimensões configuradas acima */
+    ));
 };
 
 add_action('after_setup_theme','wpdevs_config',0); /* o '0' define prioridade maxima */

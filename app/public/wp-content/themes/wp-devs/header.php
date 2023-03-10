@@ -13,7 +13,18 @@
             <section class="top-bar">
                 <div class="container">
                     <div class="logo">
-                        logo
+                        <?php 
+                            if(has_custom_logo()){ /*  se tiver foto do logo  */
+                                the_custom_logo(); /*  exibe logo */
+                            }else{ /* senão */
+                                ?>
+                                    <a href="<?php echo home_url('/'); ?>"><span> <?php bloginfo ('name'); ?></a> <!-- ele vai pra home e exibe o nome da home usando 
+                                o bloginfo  -->
+                                <?php
+                                
+                            }
+                             
+                        ?><!--  aqui chama o logo através do theme_support para o logo -->
                     </div>
                     <div class="searchbox">
                         search
