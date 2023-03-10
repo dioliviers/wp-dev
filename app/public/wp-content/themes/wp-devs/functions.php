@@ -31,6 +31,23 @@ function wpdevs_config(){
         
         /* quando definimos a imagem no painel ela aparecerá nas dimensões configuradas acima */
     ));
+
+
 };
 
 add_action('after_setup_theme','wpdevs_config',0); /* o '0' define prioridade maxima */
+
+add_action('widgets_init','wpdevs_sidebars');
+
+function wpdevs_sidebars(){
+    register_sidebar(array(
+        'name' => 'Blog sidebar',
+        'id'   => 'sidebar-blog',
+        'description' => 'This is the blog sidebar. You can add your widgets here.',
+        'before_widget' => '<div> class="widget-wrapper"',
+        'after' => '</div>',
+        'before_title' => '<h4> class="widget-title"',
+        'after_title'  => '</h4>',
+
+    ));
+}
