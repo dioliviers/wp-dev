@@ -62,4 +62,41 @@ function wpdevs_sidebars(){ /* crio uma função */
             'after_title'   => '</h4>' /* fecha a classe depois */
         )
     );
+
+    register_sidebar( /*  chamo a função register_sidebar e passo como parametro em array as informações para inserir no sidebar */
+        array( 
+            'name'  => 'Sevice 1',  /* nome do widget */
+            'id'    => 'services-1', /*  classe */
+            'description'   => 'One service area', /* descrição */
+            'before_widget' => '<div class="widget-wrapper">',/* cria uma classe antes */
+            'after_widget'  => '</div>',/* fecha a classe depois */
+            'before_title'  => '<h4 class="widget-title">',/* cria uma classe antes */
+            'after_title'   => '</h4>' /* fecha a classe depois */
+        )
+    );
+
+    register_sidebar( /*  chamo a função register_sidebar e passo como parametro em array as informações para inserir no sidebar */
+        array( 
+            'name'  => 'Service 2',  /* nome do widget */
+            'id'    => 'services-2', /*  classe */
+            'description'   => 'two service area', /* descrição */
+            'before_widget' => '<div class="widget-wrapper">',/* cria uma classe antes */
+            'after_widget'  => '</div>',/* fecha a classe depois */
+            'before_title'  => '<h4 class="widget-title">',/* cria uma classe antes */
+            'after_title'   => '</h4>' /* fecha a classe depois */
+        )
+    );
+
+    register_sidebar( /*  chamo a função register_sidebar e passo como parametro em array as informações para inserir no sidebar */
+        array( 
+            'name'  => 'Service 3',  /* nome do widget */
+            'id'    => 'services-3', /*  classe */
+            'description'   => 'three service area', /* descrição */
+            'before_widget' => '<div class="widget-wrapper">',/* cria uma classe antes */
+            'after_widget'  => '</div>',/* fecha a classe depois */
+            'before_title'  => '<h4 class="widget-title">',/* cria uma classe antes */
+            'after_title'   => '</h4>' /* fecha a classe depois */
+        )
+    );
+
 }
