@@ -35,14 +35,12 @@
                         <h2>latest news </h2>
                         <div class="container">
                             <?php 
-
                             $args = array( /* pegoo os argumentos do array e coloco em args */
                                 'post-type' => 'post', /* tipo de post -> post*/
                                 'posts_per_page' => '4,', /* post por pagina 3 */
                                 'category_in' => array (7,4,8), /* passo o id das categorias que eu quero pegar  */
                                 'category_not_in'=> array (1),/* não quero que apareça a categoria com o id 1 */
-                            );
-                            
+                            );                       
                             $postlist = new WP_Query($args); /*  para chamar a query do args preciso de um novo argumento e passar como parametro a 
                             query, e depois colocar dentro de uma variável no caso postList */
                             
@@ -52,8 +50,9 @@
                                     while( $postlist->have_posts() ) : $postlist->the_post(); /* enquanto houver post no post  */
                                     ?>
                                     <article class="latest-news">
-                                        <?php the_post_thumbnail( 'medium' ); ?> <!-- faz a imagem ser larga -->
-                                            <h3><?php the_title(); ?></h3>
+                                        <a href = "<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium' ); ?> </a> <!-- disponibiliza a imagem destacada
+                                         e faz ela ficar no tamanho medium devido o parametro -->
+                                            <h3> <a href="<?php the_title(); ?>"></a> </h3>
                                             <div class="meta-info">
                                             <p>
                                                 by <span><?php the_author_posts_link(); ?></span> 
