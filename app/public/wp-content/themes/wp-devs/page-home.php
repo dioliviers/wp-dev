@@ -32,27 +32,45 @@
                         </div>
                     </section>
                     <section class="home-blog">
+                        <h2>latest news </h2>
                         <div class="container">
-                            <div class="blog-items">
-                                <?php 
-                                    if( have_posts() ):/* Se existir post */
-                                        while( have_posts() ) : the_post(); /* enquanto houver post no post  */
-                                        ?>
-                                            <article>
-                                                <h2><?php the_title(); ?></h2><!-- ele exibe o titulo do post -->
-                                                <div class="meta-info">
-                                                    <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p><!-- a data e o author obs: sempre um get tem um echo -->
-                                                    <p>Categories: <?php the_category( ' ' ); ?></p><!-- a categoria -->
-                                                    <p>Tags: <?php the_tags( '', ', '); ?></p> <!--  as tags -->
-                                                </div>
-                                                <?php the_content(); ?> <!--  exibe o conteúdo do content se houver post -->
-                                            </article>
-                                        <?php
-                                        endwhile;
-                                    else: ?>
-                                        <p>Nothing yet to be displayed!</p>
-                                <?php endif; ?>                                
-                            </div>
+                            <?php 
+
+                            $args = array( /* pegoo os argumentos do array e coloco em args */
+                                'post-type' => 'post', /* tipo de post -> post*/
+                                'posts_per_page' => '4,', /* post por pagina 3 */
+                                'category_in' => array (7,4,8), /* passo o id das categorias que eu quero pegar  */
+                                'category_not_in'=> array (1),/* não quero que apareça a categoria com o id 1 */
+                            );
+                            
+                            $postlist = new WP_Query($args); /*  para chamar a query do args preciso de um novo argumento e passar como parametro a 
+                            query, e depois colocar dentro de uma variável no caso postList */
+                            
+                                /* aqui passei a variavel já com o filtro do query e estou comparando já com o filtro utilizando a 
+                                variável*/
+                                if( $postlist->have_posts() ):/* Se existir post */
+                                    while( $postlist->have_posts() ) : $postlist->the_post(); /* enquanto houver post no post  */
+                                    ?>
+                                    <article class="latest-news">
+                                        <?php the_post_thumbnail( 'medium' ); ?> <!-- faz a imagem ser larga -->
+                                            <h3><?php the_title(); ?></h3>
+                                            <div class="meta-info">
+                                            <p>
+                                                by <span><?php the_author_posts_link(); ?></span> 
+                                                Categories: <span><?php the_category( ' ' ); ?></span>
+                                                Tags: <?php the_tags( '', ', ' ); ?>
+                                            </p>
+                                            <p><span><?php echo get_the_date(); ?></p>
+                                            </div>
+                                        <?php the_excerpt(); ?>
+                                    </article>
+                                    <?php
+                                    endwhile;
+                                    wp_reset_postdata(); /*  isso garante que a consulta que ela vai fazer não vai afetar a consulta principal
+                                    do wordpress */
+                                else: ?>
+                                    <p>Nothing yet to be displayed!</p>
+                            <?php endif; ?>                                
                         </div>
                     </section>
                 </main>
