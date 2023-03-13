@@ -27,7 +27,7 @@
                         ?><!--  aqui chama o logo através do theme_support para o logo -->
                     </div>
                     <div class="searchbox">
-                        search
+                        <?php get_search_form(); ?> <!-- insere um campo de busca -->
                     </div>
                 </div>
             </section>
