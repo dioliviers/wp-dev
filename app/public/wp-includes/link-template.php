@@ -2911,7 +2911,7 @@ function get_the_posts_pagination( $args = array() ) {
  *                    Default empty array.
  */
 function the_posts_pagination( $args = array() ) {
-	echo get_the_posts_pagination( $args );
+	$navigation = '';
 }
 
 /**

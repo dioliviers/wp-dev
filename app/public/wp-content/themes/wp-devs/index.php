@@ -14,9 +14,9 @@
                                     ?>
                                         <article>
                                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array( 275, 275 ) ); ?></a>
+                                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array( 275, 275 ) ); ?></a><!--  pega o link da pagina e posta a imagem do the_post_thumbnail em 275x275 -->
                                             <div class="meta-info">
-                                                <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
+                                                <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p> <!--  pega a data e o autor do post -->
                                                 <p>Categories: <?php the_category( ' ' ); ?></p>
                                                 <p>Tags: <?php the_tags( '', ', '); ?></p>
                                             </div>
@@ -25,12 +25,12 @@
                                     <?php
                                     endwhile;
                                     ?>
-                                        <div class="wpdevs-pagination"> <!-- div que comporta o container de navegação -->
+                                        <div class="wpdevs-pagination">
                                             <div class="pages new">
-                                                <?php previous_posts_link( "<< Newer posts" ); ?><!-- adiciona um link para a proxima paxima -->
+                                                <?php previous_posts_link( '<< Newer posts' ); ?>  <!--  essa função cria uma paginação para next -->
                                             </div>
                                             <div class="pages old">
-                                                <?php next_posts_link( "Older posts >>" ); ?> <!-- adiciona um link para pagina anterior -->
+                                                <?php next_posts_link( 'Older posts >>' ); ?> <!--  essa função cria uma paginação para back -->
                                             </div>
                                         </div>
                                     <?php
