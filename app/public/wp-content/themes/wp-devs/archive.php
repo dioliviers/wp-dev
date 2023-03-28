@@ -14,17 +14,8 @@
                             <?php 
                                 if( have_posts() ):
                                     while( have_posts() ) : the_post();
-                                    ?>
-                                        <article>
-                                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                            <div class="meta-info">
-                                                <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p> <!--  pega a data e o autor do post -->
-                                                <p>Categories: <?php the_category( ' ' ); ?></p>
-                                                <p>Tags: <?php the_tags( '', ', '); ?></p>
-                                            </div>
-                                            <?php the_excerpt(); ?>
-                                        </article>
-                                    <?php
+                                    get_template_part( 'parts/content-archive' ); /* o segundo parametro é utilizado sempre que eu quero usar uma parte especifica deste template
+                                      ele sempre vai incluir o nome do arquivo que tenha o nome identico ao segundo parametro, caso não exista o -archive ele vai chamar o proximo arquivo do template parts ou seja content.php*/
                                     endwhile;
                                     ?>
                                         <div class="wpdevs-pagination">
