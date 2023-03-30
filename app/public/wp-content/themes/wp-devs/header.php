@@ -32,26 +32,26 @@
                     </div>
                 </div>
             </section>
-              <?php if( !is_page('ladding-page')) /* se NAO for uma ladding page ele vai exibir o heade se for uma ladding page ele retorna false ou seja não seja exibido*/
-            ?>
-            <section class="menu-area">
-                <div class="container">
-                    <nav class="main-menu">
-                        <button class="check-button">
-                            <div class="menu-icon">
-                                <div class="bar1"></div>
-                                <div class="bar2"></div>
-                                <div class="bar3"></div>
-                            </div>
-                        </button>
-                        <?php wp_nav_menu( 
-                            array( 
-                                'theme_location' => 'wp_devs_main_menu', /* THEME_LOCATION RECEBE O SLUG DO MENU CRIADO EM FUNCTIONS.PHP */
-                                'depth' => 2 /* Restringe a quantidade de submenus 0 = Sem restrição, 1 = 1 sub menu , 2 = 2 submenus */
-                            ) 
-                        );?> 
-                    </nav>
-                </div>
-            </section>
-        <?php endif; ?/>
+              <?php if( !is_page('ladding-page')): /* se NAO for uma ladding page ele vai exibir o heade se for uma ladding page ele retorna false ou seja não seja exibido*/
+                ?>
+                <section class="menu-area">
+                    <div class="container">
+                        <nav class="main-menu">
+                            <button class="check-button">
+                                <div class="menu-icon">
+                                    <div class="bar1"></div>
+                                    <div class="bar2"></div>
+                                    <div class="bar3"></div>
+                                </div>
+                            </button>
+                            <?php wp_nav_menu( 
+                                array( 
+                                    'theme_location' => 'wp_devs_main_menu', /* THEME_LOCATION RECEBE O SLUG DO MENU CRIADO EM FUNCTIONS.PHP */
+                                    'depth' => 2 /* Restringe a quantidade de submenus 0 = Sem restrição, 1 = 1 sub menu , 2 = 2 submenus */
+                                ) 
+                            );?> 
+                        </nav>
+                    </div>
+                </section>
+              <?php endif; ?>
         </header>
