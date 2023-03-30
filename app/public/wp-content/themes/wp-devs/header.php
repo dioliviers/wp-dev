@@ -27,12 +27,13 @@
                         ?><!--  aqui chama o logo através do theme_support para o logo -->
                     </div>
                     <div class="searchbox">
-                        <?php get_search_form(); ?> <!-- insere um campo de busca -->
+                        <?php get_search_form(); ?>
+                             <!-- insere um campo de busca -->
                     </div>
                 </div>
             </section>
-              
-
+              <?php if( !is_page('ladding-page')) /* se NAO for uma ladding page ele vai exibir o heade se for uma ladding page ele retorna false ou seja não exibe o menu*/
+            ?>
             <section class="menu-area">
                 <div class="container">
                     <nav class="main-menu">
@@ -52,4 +53,5 @@
                     </nav>
                 </div>
             </section>
+        <?php endif; ?>
         </header>
