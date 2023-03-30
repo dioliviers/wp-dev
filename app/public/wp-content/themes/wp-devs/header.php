@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </section>
-              <?php if( !is_page('ladding-page')) /* se NAO for uma ladding page ele vai exibir o heade se for uma ladding page ele retorna false ou seja não exibe o menu*/
+              <?php if( !is_page('ladding-page')) /* se NAO for uma ladding page ele vai exibir o heade se for uma ladding page ele retorna false ou seja não seja exibido*/
             ?>
             <section class="menu-area">
                 <div class="container">
@@ -53,5 +53,5 @@
                     </nav>
                 </div>
             </section>
-        <?php endif; ?>
+        <?php endif; ?/>
         </header>
