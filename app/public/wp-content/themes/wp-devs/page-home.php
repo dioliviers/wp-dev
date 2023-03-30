@@ -48,7 +48,7 @@
                                 variável*/
                                 if( $postlist->have_posts() ):/* Se existir post */
                                     while( $postlist->have_posts() ) : $postlist->the_post(); /* enquanto houver post no post  */
-                                    get_template_parts( 'parts/content' , 'content-latest-news' );
+                                    get_template_part( 'parts/content' , 'content-latest-news' );
                                     ?>
                                         
                                     <?php

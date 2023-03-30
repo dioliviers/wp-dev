@@ -1,9 +1,9 @@
 /*
 Theme Name: WP Devs
 Theme URI: https://website.com/wp-devs
-Author: Diogo
+Author: Marcelo Vieira
 Author URI: https://website.com/wp-devs
-Description: This theme for learning purposes only.
+Description: This theme is for learning purposes only.
 Requires at least: 5.6
 Tested up to: 5.9
 Requires PHP: 8.0
@@ -12,10 +12,25 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-devs
 Tags: one-column, custom-menu, custom-logo, featured-images, translation-ready
-
-Twenty Twenty-Two WordPress Theme, (C) 2021 WordPress.org
-Twenty Twenty-Two is distributed under the terms of the GNU GPL.
 */
+
+/**
+1. Normalize
+2. Theme Specific CSS
+*/
+
+
+/* 1. Normalize */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
 
  html {
     line-height: 1.15; /* 1 */
@@ -620,7 +635,7 @@ img {
     } 
     .show-dropdown{
         left: 0 !important;
-    }   
+    }  
     .animate-button .bar1 {
         -webkit-transform: rotate(-45deg) translate(-4px, 4px);
         transform: rotate(-45deg) translate(-4px, 4px);
@@ -630,7 +645,7 @@ img {
         -webkit-transform: rotate(45deg) translate(-7px, -7px);
         transform: rotate(45deg) translate(-7px, -7px);
     }
-} 
+}  
 
 /* Hero */
 .hero{
@@ -684,7 +699,7 @@ img {
 .services-item p{
     margin-bottom: 40px;
 }
-.services-item figure{ 
+.services-item figure img{ 
     background: var( --wpdevs-black-blue );
     padding: 15px; 
 }
