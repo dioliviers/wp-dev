@@ -7,6 +7,7 @@
     <?php wp_head(); ?><!-- sem essa função não funciona nenhuma folha de estilo  -->
 </head>
 <body <?php body_class();?>>
+<?php wp_body_open(); ?><!-- deixa um gancho de ação que tem a mesma posição neste tema (gancho) -->
  
     <div id="page" class="site">
         <header>
