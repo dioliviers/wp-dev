@@ -8,6 +8,16 @@ function wpdevs_load_scripts(){
 add_action( 'wp_enqueue_scripts', 'wpdevs_load_scripts' );
 
 function wpdevs_config(){
+    $textdomain = "wp-devs";/* text domain é o nome que da para o identificador.  */
+    load_theme_textdomain($textdomain, get_template_directory() . '/languages' );/* chamo a função para carregar um texto 
+     e chamo a localização da pasta onde ficará o arquivo de tradução */
+    
+
+
+
+
+
+
     register_nav_menus(
         array(
             'wp_devs_main_menu' => 'Main Menu',
