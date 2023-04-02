@@ -54,11 +54,15 @@
                         <h2>latest news </h2>
                         <div class="container">
                             <?php 
+                            $per_page = get_theme_mod('set_per_page' , 3); /* Se não tiver nada no banco o looping vai receber 3 posts por padrão , aqui ele adiciona no painel a opção para incluir a quantidade de posts no customizar*/
+                            $category_include = get_theme_mod('set_category_include');  /* cria um campo para incluir a quantidade de pagina a ser exibida */
+                            $category_exclude = get_theme_mod('set_category_exclude'); /* cria um campo para incluir a quantidade de pagina a ser excluida */
                             $args = array( /* pegoo os argumentos do array e coloco em args */
-                                'post-type' => 'post', /* tipo de post -> post*/
-                                'posts_per_page' => '4,', /* post por pagina 3 */
-                                'category_in' => array (7,4,8), /* passo o id das categorias que eu quero pegar  */
-                                'category_not_in'=> array (1),/* não quero que apareça a categoria com o id 1 */
+                                'post-type' => 'post', /* tipo de post -> post*/ 
+                                'posts_per_page' => $per_page , /* post por pagina 3 */
+                                'category_in' => explode(",", $category_include ), /* A função explode transforma em array , o primeiro parametro ele é um separador
+                                o segundo é onde ele vai receber os elementos e transformar em um array*/
+                                'category_not_in'=> explode(",", $category_exclude ),/* não quero que apareça a categoria com o id 1 */
                             );                       
                             $postlist = new WP_Query($args); /*  para chamar a query do args preciso de um novo argumento e passar como parametro a 
                             query, e depois colocar dentro de uma variável no caso postList */
