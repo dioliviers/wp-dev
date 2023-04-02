@@ -5,18 +5,20 @@
             <div class="container">
                 <div class="error-404">
                     <header>
-                        <h1>Page not found</h1>
-                        <p>Unfortunately, the page you tried to reach does not exist on this site.</p>
+                        <h1><?php _e( 'Page not found' , 'wp-devs' );?></h1> <!-- chamando a função _e e passe como parametro o texto a ser traduzido, o segundo parametro é a pasta que ele fara
+                    a tradução -->
+                        <p><?php _e( 'Unfortunately, the page you tried to reach does not exist on this site.' , 'wp-devs' );?></p><!-- chamando a função _e e passe como parametro o texto a ser traduzido, o segundo parametro é a pasta que ele fara
+                    a tradução -->
                     </header>
 
                     <div class="error">
-                        <p>How about doing a search?</p>
+                        <p><?php _e( 'How about doing a search?' , 'wp-devs' );?></p>
                         <?php get_search_form(); ?> <!-- essa função cria um campo de busca -->
                         <?php 
                         the_widget( 
                             'WP_Widget_Recent_Posts',/* essa função pega como parametro os posts recentes */
                             array(
-                                'title' => 'Latest Posts',/* pega o titulo dos ultimos posts */
+                                'title' => _e( 'Latest Posts' ),/* pega o titulo dos ultimos posts */
                                 'number'    => 3 /*  informa a quantidade de posts a ser exibido */
                             ) 
                         ); 

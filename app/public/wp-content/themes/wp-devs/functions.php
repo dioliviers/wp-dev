@@ -20,8 +20,8 @@ function wpdevs_config(){
 
     register_nav_menus(
         array(
-            'wp_devs_main_menu' => 'Main Menu',
-            'wp_devs_footer_menu' => 'Footer Menu'
+            'wp_devs_main_menu' => __('Main Menu' , 'wp-devs'), /* traduzindo o footer menu no painel */
+            'wp_devs_footer_menu' =>  __( 'Footer Menu' , 'wp-devs'),
         )
     );
 
