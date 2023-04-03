@@ -105,7 +105,7 @@ apresentará um novo item para manipular o copyright -->
             array(
                 'type' => 'theme_mod',
                 'default' => '#',
-                'sanitize_callback' => 'esc_url_raw'
+                'sanitize_callback' => 'esc_url_raw'/* função de escape */
             )
         );
 
@@ -144,7 +144,7 @@ apresentará um novo item para manipular o copyright -->
         'set_hero_background',
         array(
             'type' => 'theme_mod',
-            'sanitize_callback' => 'absint'
+            'sanitize_callback' => 'absint' /* função do wp verifica se é inteiro e se é positivo */
         )
     );
 
@@ -201,7 +201,8 @@ $wp_customize->add_section(
             'set_category_exclude', 
             array(
                 'type' => 'theme_mod',
-                'sanitize_callback' => 'sanitize_text_field'
+                'sanitize_callback' => 'sanitize_text_field' /* essa função pega tudo que é digitado, remove todas as tags
+                espaços em branco e converte em entidades html , eu defino que neste campo ele receberá apenas textos*/
         ) );
 
         $wp_customize->add_control( 
